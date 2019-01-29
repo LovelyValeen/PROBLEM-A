@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<title>basic calculator</title>
+</head>
+<body>
+
+<center>
+
+	<h2>Basic Calculator</h2>
+
+
+	<input type="number" placeholder= "0" id="ndisplay">
+
+	<br>
+	<br>
+
+    <button onclick=" attachNumber (this)">0</button>
+    <button onclick=" attachNumber (this)">1</button>
+    <button onclick=" attachNumber (this)">2</button>
+    <button id= "nplus" onclick="Addition()">+</button>
+
+    <br>
+
+    <button onclick=" attachNumber (this)">3</button>
+    <button onclick=" attachNumber (this)">4</button>
+    <button onclick=" attachNumber (this)">5</button>
+    <button id= "nminus" onclick="Subtraction()">-</button>
+
+    <br>
+
+    <button onclick=" attachNumber (this)">6</button>
+    <button onclick=" attachNumber (this)">7</button>
+    <button onclick=" attachNumber (this)">8</button>
+    <button id= "nmultiply" onclick="Multiplication()">*</button>
+	<br>
+
+	<button onclick=" attachNumber (this)">9</button>
+	<button id= "ndivide" onclick="Division()">/</button>
+	<button id= "nmodulo" onclick="Modulo()">%</button>
+	<button id= "nExp" onclick="Exponent()">^</button>
+
+	<br>
+	<button id= "nequals" onclick="Equals()">=</button>
+	<button id= "nback" onclick="Backspace()">----</button>
+	<button id= "nclear" onclick="Clear()"> CLEAR </button>
+</center>
+
+
+<script type="text/javascript">
+	let n = document.getElementById('ndisplay');
+	let numberHolder;
+	let optr;
+
+	function attachNumber(e){
+		n.value += e.innerHTML;
+	}
+
+	function Addition(){
+		optr = " + ";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+	function Subtraction(){
+		optr = " - ";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+	function Multiplication(){
+		optr = " * ";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+	function Division(){
+		optr = " / ";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+	function Modulo(){
+		optr = " % ";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+	function Exponent(){
+		optr = " ^ ";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+
+	function Equals(){
+
+		switch (optr){
+			case " + ":
+				n.value = numberHolder + parseInt(n.value);
+				break;
+
+			case " - ":
+				n.value = numberHolder - parseInt(n.value);
+				break;
+
+			case " * ":
+				n.value = numberHolder * parseInt(n.value);
+				break;
+
+			case " / ":
+				n.value = numberHolder / parseInt(n.value);
+				break;
+
+			case " % ":
+				n.value = numberHolder % parseInt(n.value);
+				break;
+
+			case " ^ ":
+				n.value = numberHolder ^ parseInt(n.value);
+				break;
+
+			default:
+				console.log ('no operator defined');
+				break;
+
+				
+		}
+	}
+
+</script>
+
+</body>
+</html>
